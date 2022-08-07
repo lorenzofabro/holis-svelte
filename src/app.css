@@ -1,0 +1,299 @@
+@import-normalize;
+@tailwind base;
+@tailwind components;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+@layer components {
+	.sidebar {
+		@apply fixed top-0 left-0 h-screen w-20 m-0 flex flex-col bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white;
+	}
+
+	.sidebar-icon {
+		@apply relative flex items-center justify-center
+    h-14 w-14 mt-2 mb-2 mx-auto
+  bg-gray-400 hover:bg-pink-600 dark:bg-gray-800
+  text-pink-500 hover:text-white dark:hover:bg-pink-600
+    hover:rounded-xl rounded-3xl
+    transition-all duration-300 ease-linear
+    cursor-pointer shadow-lg;
+	}
+
+	.sidebar-tooltip {
+		@apply absolute w-auto p-2 m-2 min-w-max left-16 rounded-md shadow-md
+		bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white
+    text-xs font-bold
+    transition-all duration-100 scale-0 origin-left;
+	}
+
+	.sidebar-icon-component {
+		@apply w-8 h-8;
+	}
+
+	.sidebar-hr {
+		@apply bg-gray-200 dark:bg-gray-800
+    border border-gray-200 dark:border-gray-800 rounded-full
+    mx-2;
+	}
+
+	.title-hashtag {
+		@apply text-lg tracking-wider font-semibold text-gray-500 dark:text-white
+    ml-2 my-auto;
+	}
+
+	.title-text {
+		@apply text-xl text-gray-500 tracking-wider font-semibold text-opacity-80 dark:text-white
+    mr-auto ml-2 my-auto
+    transition duration-300 ease-in-out;
+	}
+
+	.search {
+		@apply w-1/5 flex items-center justify-start
+    bg-gray-400 dark:bg-gray-600
+    text-gray-500
+    px-2 h-9 ml-0 mr-0
+    rounded-md shadow-md
+    transition duration-300 ease-in-out;
+	}
+
+	.search-input {
+		@apply w-full font-sans font-semibold
+    bg-transparent outline-none
+    text-gray-500  placeholder-gray-500
+    pl-1 rounded;
+	}
+
+	.content-container {
+		@apply flex flex-col
+    bg-gray-300 dark:bg-gray-600
+    m-0 ml-20
+    h-screen w-full
+    overflow-hidden;
+	}
+
+	.content-list {
+		@apply flex flex-col items-center
+    h-full w-full
+    mt-0 ml-0 mx-auto px-0 pb-12
+    overflow-y-scroll;
+	}
+
+	.post {
+		@apply w-full
+    flex flex-row items-center
+    py-4 ml-20
+    cursor-pointer;
+	}
+
+	.post-selected {
+		@apply bg-green-400 dark:bg-gray-900
+    shadow-md;
+	}
+
+	.post-content {
+		@apply flex flex-col justify-start
+    ml-1 mr-12;
+	}
+
+	.post-text {
+		@apply text-lg text-left text-gray-800 dark:text-white
+    mr-auto whitespace-normal;
+	}
+
+	.post-owner {
+		@apply text-left font-semibold text-gray-800 dark:text-white mr-2 cursor-pointer;
+	}
+
+	.avatar-row {
+		@apply flex flex-row mt-6;
+	}
+
+	.avatar-wrapper {
+		@apply mr-2;
+	}
+
+	.avatar {
+		@apply flex-none
+    w-12 h-full
+    rounded-full shadow-md
+    object-cover bg-gray-100
+    mb-auto mt-0 mx-0
+    cursor-pointer;
+	}
+
+	.avatar-tooltip {
+		@apply absolute w-auto p-2 m-2 min-w-max rounded-md shadow-md
+		bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white
+    text-xs font-bold
+    transition-all duration-100 scale-0 origin-left;
+	}
+
+	.timestamp {
+		@apply text-xs text-left font-semibold text-gray-500 dark:text-gray-500 ml-2;
+	}
+
+	.bottom-bar {
+		@apply flex flex-row items-center justify-between
+    fixed left-40 right-20 bottom-4
+    rounded-lg shadow-lg
+    bg-gray-400 dark:bg-gray-500 px-2
+    h-12;
+	}
+
+	.bottom-bar-input {
+		@apply font-semibold w-full
+    bg-transparent outline-none
+    ml-0 mr-auto
+    text-gray-500  dark:text-gray-400 placeholder-gray-500 dark:placeholder-gray-400
+    cursor-text;
+	}
+
+	.bottom-bar-send {
+		@apply flex flex-row
+		h-8 w-8
+		text-gray-400
+		transition duration-300 ease-in-out
+		hover:text-pink-500
+		rounded-full shadow-md
+		cursor-pointer;
+	}
+
+	.channel-bar {
+		@apply w-80 h-auto m-0 ml-16 bg-gray-200 dark:bg-gray-800
+     overflow-hidden;
+	}
+
+	.channel-container {
+		@apply flex flex-col items-center justify-start
+    p-1 m-0;
+	}
+
+	.channel-block {
+		@apply flex flex-col items-center
+    h-16
+    m-0 p-0;
+	}
+
+	.channel-block-title {
+		@apply text-6xl tracking-wider font-bold
+    text-gray-600 dark:text-gray-400
+    mx-auto mt-12 align-middle flex;
+	}
+
+	.channel-block-hashtag {
+		@apply w-14 ml-4 mr-1 mt-1;
+	}
+
+	.card-row {
+		@apply flex flex-row items-center justify-evenly w-full mt-20;
+	}
+
+	.card {
+		@apply block p-6 min-h-full w-96 bg-white rounded-lg border border-gray-200 shadow-md
+		hover:bg-pink-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-pink-500  cursor-pointer;
+	}
+
+	.card-title {
+		@apply mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white;
+	}
+
+	.card-content {
+		@apply font-normal text-gray-700 dark:text-gray-400 h-10;
+	}
+
+	.dropdown {
+		@apply m-0 w-full px-2 pb-2
+    transition duration-300 ease-in-out;
+	}
+
+	.dropdown-header {
+		@apply flex flex-row items-center justify-evenly
+    mx-0 text-gray-500
+    cursor-pointer;
+	}
+
+	.dropdown-header-text {
+		@apply text-gray-500  text-opacity-90
+    text-lg font-semibold
+    cursor-default;
+	}
+
+	.dropdown-header-text-selected {
+		@apply text-blue-500 text-opacity-90 text-lg font-bold;
+	}
+
+	.dropdown-selection {
+		@apply flex flex-row items-center justify-evenly
+    mt-1 mr-auto ml-2
+    transition duration-300 ease-in-out
+    cursor-pointer;
+	}
+
+	.dropdown-selection-text {
+		@apply text-gray-500 font-semibold tracking-wide
+    mr-auto
+    transition duration-300 ease-in-out
+    hover:text-pink-500 dark:hover:text-gray-500
+    cursor-pointer;
+	}
+
+	.icon-button {
+		@apply cursor-pointer  hover:bg-pink-600
+		text-pink-500 hover:text-white dark:hover:bg-pink-600
+		hover:rounded-xl rounded-3xl transition-all duration-300 ease-linear
+		w-12 h-12;
+	}
+
+	.top-navigation {
+		@apply flex flex-row items-center justify-between
+		bg-gray-300 dark:bg-gray-700 bg-opacity-90
+		w-full h-16
+		m-0
+		shadow-lg;
+	}
+
+	.top-navigation-icon {
+		@apply text-gray-500
+		mr-3 ml-4
+		transition duration-300 ease-in-out
+		hover:text-pink-500 w-9 h-9
+		cursor-pointer;
+	}
+
+	.top-navigation-icon:first {
+		@apply ml-auto mr-4;
+	}
+
+	.top-navigation-title {
+		@apply text-3xl font-semibold text-gray-500 dark:text-white align-middle flex;
+	}
+
+	.top-navigation-hashtag {
+		@apply w-8 mr-1;
+	}
+
+	.voice-button {
+		@apply h-5 w-5 dark:text-gray-400 text-gray-600;
+	}
+
+	.bottom-bar-voice {
+		@apply flex flex-row items-center justify-center
+    fixed left-40 right-20 bottom-4
+    h-12;
+	}
+}
+
+@tailwind utilities;
+
+::-webkit-scrollbar {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-gray-500 dark:bg-green-400;
+}
